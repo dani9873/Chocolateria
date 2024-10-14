@@ -10,11 +10,11 @@
 
 <style scoped>
 .logo-container {
-    margin-top: -30px;
+    margin-top: -43px;
 }
 
 .logo-image {
-    max-width: 180%;
-    max-height:180%;
+    max-width: 230%;
+    max-height:230%;
 }
 </style>
