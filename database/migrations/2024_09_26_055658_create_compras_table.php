@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->timestamp('fecha')->index(); // Index en fecha
             $table->string('categoria');
-            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('materia_prima_id')->constrained('materia_primas')->onDelete('cascade');
             $table->timestamps();
 

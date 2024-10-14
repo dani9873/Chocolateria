@@ -17,6 +17,8 @@ defineProps({
         class="bg-cover bg-center min-h-screen flex flex-col items-center"
         style="background-image: url('/images/landing.jpeg')"
     >
+        <div class="absolute inset-0 bg-black opacity-25"></div>
+
         <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
             <header
                 class="absolute top-0 left-0 right-0 flex justify-between items-center p-6"
@@ -34,7 +36,9 @@ defineProps({
             <div
                 class="bg-cover bg-center min-h-screen flex flex-col items-center justify-center text-center"
             >
-                <h1 class="title">Bienvenido a Granolas Doña Alicia</h1>
+                <h1 class="title">BIENVENIDO</h1>
+                <p class="subtitle1">Productos Artesanales Doña Alicia</p>
+                <br />
                 <p class="subtitle">
                     Deliciosos chocolates y granolas saludables
                 </p>
@@ -44,28 +48,50 @@ defineProps({
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lovelace:wght@400;700&display=swap");
+@import url("https://fontesk.com/cristal-elegance-font/");
+@font-face {
+    font-family: "Amelia Harper Script";
+    src: url("/fonts/amelia_harper_script.ttf") format("truetype");
+}
 
 body {
     font-family: "Montserrat", sans-serif;
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: white;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Lovelace", serif;
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    font-weight: 600;
+    text-shadow: 3px 3px 10px rgb(0, 0, 0,255);
+    line-height: 1;
+}
+.title1 {
+    font-size: 2rem;
+    color: white;
+    font-family: "Lovelace", serif;
+    text-align: center;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 255);
+    line-height: 1;
 }
 .subtitle {
     font-size: 2rem;
     color: white;
-    font-family: "Playfair Display", serif;
+    font-family: "Lovelace", serif;
     text-align: center;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 255);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 255);
     margin-top: 1rem;
+    line-height: 1;
+}
+.subtitle1 {
+    font-size: 6rem;
+    color: white;
+    font-family: "Amelia Harper Script", sans-serif;
+    text-align: center;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 255);
+    margin-top: 1rem;
+    line-height: 1;
 }
 .bg-cover {
     filter: brightness(0.85);
@@ -79,6 +105,8 @@ body {
     }
 }
 .title,
+.title1,
+.subtitle1,
 .subtitle {
     animation: fadeIn 3s ease-in-out;
     user-select: none;
@@ -89,12 +117,12 @@ body {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
     border: 1px solid #d7ccc8;
-    border-radius: 25px;
+    border-radius: 17px;
     outline: none;
     overflow: hidden;
     color: rgb(255, 255, 255);
@@ -123,8 +151,8 @@ body {
 
 .button:hover {
     color: #000;
-    background-color: #fff;
-    border: 1px solid #fff;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 .button:hover::before {
