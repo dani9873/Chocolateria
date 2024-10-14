@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\usersController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\MateriaPrimaController;
 use App\Http\Controllers\ClientesController;
@@ -25,7 +25,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
-    /* Route::resource('usuarios', UsuariosController::class);
+    /* Route::resource('users', usersController::class);
     Route::resource('productos', ProductosController::class);
     Route::resource('materias-primas', MateriaPrimaController::class);
     Route::resource('clientes', ClientesController::class);

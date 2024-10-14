@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('fecha')->index(); // Index en fecha para consultas por fechas
             $table->decimal('total', 10, 2);
             $table->foreignId('cliente_id')->constrained('clientes')->onDelete('cascade');
-            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
 
             // Índices para claves foráneas
