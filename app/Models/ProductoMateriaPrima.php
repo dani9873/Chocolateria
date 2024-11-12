@@ -23,5 +23,4 @@ class ProductoMateriaPrima extends Model
     {
         return $this->belongsTo(MateriaPrima::class, 'idmateriaPrima');
     }
-
 }

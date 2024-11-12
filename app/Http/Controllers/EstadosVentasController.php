@@ -2,36 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EstadosVentas;
+use App\Models\EstadoVenta;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class EstadosVentasController extends Controller
 {
     public function index()
     {
-        return EstadosVentas::all();
+        $estadosVentas = EstadoVenta::all();
+        return Inertia::render('Modules/Ventas', ['estados' => $estadosVentas]);
     }
 
     public function show($id)
     {
-        return EstadosVentas::find($id);
+        $estadoVenta = EstadoVenta::find($id);
+        return Inertia::render('Modules/Ventas', ['estado' => $estadoVenta]);
     }
 
     public function store(Request $request)
     {
-        return EstadosVentas::create($request->all());
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+        ]);
+        EstadoVenta::create($request->all());
+        return redirect()->route('estadosVentas')->with('success', 'Estado de Venta creado exitosamente');
     }
 
     public function update(Request $request, $id)
     {
-        $estadoVenta = EstadosVentas::findOrFail($id);
+        $estadoVenta = EstadoVenta::findOrFail($id);
         $estadoVenta->update($request->all());
-        return $estadoVenta;
+        return redirect()->route('estadosVentas')->with('success', 'Estado de Venta actualizado exitosamente');
     }
 
     public function destroy($id)
     {
-        EstadosVentas::destroy($id);
-        return response()->json(['message' => 'Estado de Venta eliminado']);
+        EstadoVenta::destroy($id);
+        return redirect()->route('estadosVentas')->with('success', 'Estado de Venta eliminado exitosamente');
     }
 }

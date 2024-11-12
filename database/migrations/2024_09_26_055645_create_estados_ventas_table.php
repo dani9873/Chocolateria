@@ -14,11 +14,7 @@ return new class extends Migration
         Schema::create('estados_ventas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->foreignId('venta_id')->constrained('ventas')->onDelete('cascade');
             $table->timestamps();
-
-            // Índices
-            $table->index('venta_id');
         });
     }
 

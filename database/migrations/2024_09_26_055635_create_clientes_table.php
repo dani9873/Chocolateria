@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->index(); // Index en nombre
-            $table->string('email')->unique(); // Email único con índice
+            $table->string('nombre')->index();
+            $table->string('email')->unique()->nullable();
             $table->string('telefono');
             $table->timestamps();
         });
