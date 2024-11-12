@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Compra extends Model
 {
     use HasFactory;
-    protected $table = 'compra';
+    protected $table = 'compras';
 
     protected $fillable = [
         'tipoTransaccion', 'monto', 'descripcion', 'fecha', 'categoria', 'usuario_id', 'materia_prima_id',
+    ];
+    protected $casts = [
+        'fecha' => 'date',
     ];
 
     public function usuario()

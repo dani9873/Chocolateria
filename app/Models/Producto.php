@@ -8,19 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
-    protected $table = 'producto';
+    protected $table = 'productos';
 
     protected $fillable = [
-        'nombre', 'categoria', 'precio', 'cantidadDisponible', 'stock_minimo',
+        'nombre',
+        'categoria',
+        'precio',
+        'stock_minimo',
+        'cantidadDisponible',
     ];
 
-    public function ventasProducto()
+    public function materiasPrimas()
     {
-        return $this->hasMany(VentaProducto::class, 'idProducto');
+        return $this->belongsToMany(MateriaPrima::class, 'producto_materia_prima', 'idProducto', 'idmateriaPrima')
+                    ->withPivot('cantidad_por_unidad')
+                    ->withTimestamps();
     }
 
-    public function materiaPrima()
+    public function ventas()
     {
-        return $this->hasMany(ProductoMateriaPrima::class, 'idProducto');
+        return $this->belongsToMany(Venta::class, 'venta_producto', 'idProducto', 'idventa')
+                    ->withPivot('cantidad')
+                    ->withTimestamps();
     }
 }

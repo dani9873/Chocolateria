@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
-    protected $table = 'cliente';
+    protected $table = 'clientes';
 
     protected $fillable = [
-        'nombre', 'email', 'telefono',
+        'nombre',
+        'email',
+        'telefono',
     ];
 
     public function ventas()

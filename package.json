@@ -19,9 +19,12 @@
         "vue": "^3.3.13"
     },
     "dependencies": {
+        "@heroicons/vue": "^2.1.5",
         "chart.js": "^4.4.4",
+        "moment-timezone": "^0.5.46",
         "vue-chartjs": "^5.3.1",
         "vue-datepicker-next": "^1.0.3",
-        "vuetify": "^3.7.2"
+        "vuetify": "^3.7.2",
+        "xlsx": "^0.18.5"
     }
 }

@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('venta_producto', function (Blueprint $table) {
+        Schema::create('estado_venta_venta', function (Blueprint $table) {
             $table->id();
             $table->foreignId('idventa')->constrained('ventas')->onDelete('cascade');
-            $table->foreignId('idProducto')->constrained('productos')->onDelete('cascade');
-            $table->integer('cantidad');
+            $table->foreignId('estado_venta_id')->constrained('estados_ventas')->onDelete('cascade');
             $table->timestamps();
 
-            //Índices para claves foráneas
+            // Índices para claves foráneas
             $table->index('idventa');
-            $table->index('idProducto');
+            $table->index('estado_venta_id');
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('venta_producto');
+        Schema::dropIfExists('estado_venta_venta');
     }
 };
